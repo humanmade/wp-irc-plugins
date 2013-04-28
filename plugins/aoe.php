@@ -1,4 +1,5 @@
 <?php
+
 /*
 Plugin Name: Google
 */
@@ -15,20 +16,21 @@ class AOE {
 
 		// Parse what was said
 		$c = parse_command( $msgdata->message );
+	
 		if ( !$c )
 			return;
+		
 		extract( $c );
 
 		// Abort if the command is unknown to this plugin
-		if ( !in_array( $command, array( 'aoe' ) ) )
+		if ( ! in_array( $command, array( 'aoe' ) ) )
 			return;
 
 		// Allow the result to be directed at someone
-		$nick = ( !empty($nick) ) ? $nick : $msgdata->nick;
+		$nick = ( ! empty( $nick ) ) ? $nick : $msgdata->nick;
 
-		# First try and get a calculator result (the AJAX API doesn't support the calculator)
-
-		return $irc->message( SMARTIRC_TYPE_QUERY, $msgdata->channel, $nick . ': ' . 'A game of Age of Empires will be starting shorty!' );
+		return $irc->message( SMARTIRC_TYPE_QUERY, $msgdata->channel, $nick . ': ' . 'A game of Age of Empires will be starting shortly!' );
+	
 	}
 }
 
