@@ -11,8 +11,6 @@ class Tell {
 	function __construct() {
 		add_action( 'on_channel', array(&$this, 'check_message'), 10, 2 );
 		add_action( 'on_join', array(&$this, 'logged_in'), 10, 2 );
-
-		$this->to_tell['joehoyle'][] = array( 'from' => 'tom', 'message' => 'Yo', 'date' => time() );
 	}
 
 	public function logged_in( $irc, $msgdata ) {
