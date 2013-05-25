@@ -38,10 +38,10 @@ class BlackAdder {
 			return;
 
 		// get a random quote ID
-		$quote_number = rand(0, count($this->quotes->quotes));
+		$quote_id = array_rand(array_keys($quotes_obj->quotes),1);
+		
+		$quote = $quotes_obj->quotes[$quote_id]->quote_text;
 
-		// Get a random line of the song
-		$quote = $this->quotes[$quote_number]->quote_text;
 
 		// Send the line to the channel that the command was said in
 		$irc->message( SMARTIRC_TYPE_QUERY, $data->channel, $quote );
