@@ -10,7 +10,6 @@ Plugin Name: Random Blackadder quotes
 class BlackAdder {
 
 	public $quotes;
-	public $linecount;
 
 	// Plugin construct
 	function __construct() {
