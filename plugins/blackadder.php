@@ -18,9 +18,9 @@ class BlackAdder {
 		add_action( 'on_channel', array(&$this, 'command_searcher'), 10, 2 );
 
 		// load quotes
-		$blackadder = file_get_contents('quotes.json');
+		$quotes = file_get_contents('quotes.json');
 
-		$this->quotes = json_decode($blackadder);
+		$this->quotes = json_decode($quotes);
 	}
 
 	// Parses channel messages looking for !blackadder
@@ -37,9 +37,9 @@ class BlackAdder {
 			return;
 
 		// get a random quote ID
-		$quote_id = array_rand($quotes_obj->quotes,1);
+		$quote_id = array_rand($this->quotes->blackadder,1);
 		
-		$quote = $quotes_obj->quotes[$quote_id]->quote_text;
+		$quote = $this->quotes->blackadder[$quote_id]->quote_text;
 
 
 		// Send the line to the channel that the command was said in
