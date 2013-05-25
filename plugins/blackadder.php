@@ -1,10 +1,10 @@
 <?php
 /*
-Plugin Name: Hello Dolly
+Plugin Name: Random Blackadder quotes
 */
 
 /*
- * You seriously didn't think we could avoid writing a Hello Dolly plugin, did you?
+ * Posts a random blackadder quote
  */
 
 class BlackAdder {
