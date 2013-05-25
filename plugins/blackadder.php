@@ -37,7 +37,7 @@ class BlackAdder {
 			return;
 
 		// get a random quote ID
-		$quote_id = array_rand(array_keys($quotes_obj->quotes),1);
+		$quote_id = array_rand($quotes_obj->quotes,1);
 		
 		$quote = $quotes_obj->quotes[$quote_id]->quote_text;
 
