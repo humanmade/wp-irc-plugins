@@ -2,7 +2,7 @@
 /**
  * Plugin name: Random Quotes
  * Displays a random quote
- * Class BlackAdder
+ * Class Random_Quote
  */
 
 class Random_Quote {
