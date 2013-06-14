@@ -16,7 +16,7 @@ class Random_Quote {
 		add_action( 'on_channel', array( &$this, 'command_searcher' ), 10, 2 );
 
 		// load quotes
-		$quotes = file_get_contents( 'quotes.json' );
+		$quotes = file_get_contents( dirname( __FILE__ ) . '/quotes.json' );
 
 		$this->quotes = json_decode( $quotes );
 
